@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
   <meta name="description" content="">
   <meta name="author" content="">
   <title>DVRPC - Environmental Justice</title>
   <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="css/typeahead.js-bootstrap.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" type="text/css">
+  <link href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" rel="stylesheet" type="text/css">
   <link href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" rel="stylesheet" type="text/css">
   <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="css/esri-leaflet-geocoder.css" type="text/css">
-  <link rel="stylesheet" href="css/leaflet.draw.css" type="text/css">
+  <link href="css/esri-leaflet-geocoder.css" rel="stylesheet" type="text/css">
+  <link href="css/leaflet.draw.css" rel="stylesheet" type="text/css">
   <style type="text/css">
 body {
 margin-top: 52px;
@@ -418,25 +419,25 @@ background-repeat: no-repeat;
                 <br><br>
                 View the latest EJ publication:
                 <br>
-                <a href="http://www.dvrpc.org/asp/pubs/publicationabstract.asp?pub_id=TM14006" target="_blank">Environmental Justice at DVRPC: Fiscal Year 2013</a>
+                <a href="http://www.dvrpc.org/Products/TM15017" target="_blank">Environmental Justice at DVRPC - FY2014</a>
               </p>
             </div>
             <div class="tab-pane fade" id="contact">
               <p>
-                Jane M. Meconi, AICP
+               Alison Hastings PP, AICP
                 <br>
-                Public Involvement Manager
+                Manager,
                 <br>
-                Office of Communications and Public Affairs
+                Office of Communications and Engagement
                 <br>
-                Phone: 215-238-2871
+                Phone: 215-238-2929
                 <br>
-                <a href="mailto:jmeconi@dvrpc.org">jmeconi@dvrpc.org</a>
+                <a href="mailto:ahasting@dvrpc.org">ahasting@dvrpc.org</a>
               </p>
             </div>
             <div class="tab-pane fade" id="disclaimer">
               <p>
-                This web page is a public resource of general information. The Delaware Valley Regional Commission (DVRPC) makes no warranty, representation, or guarantee as to the content, sequence, accuracy, timeliness, or completeness of any of the spatial data or database information provided herein. DVRPC and partner state, local, and other agencies shall assume no liability for errors, omissions, or inaccuracies in the information provided regardless of how caused; or any decision made or action taken or not taken by any person relying on any information or data furnished within.
+                This web page is a public resource of general information. The Delaware Valley Regional Planning Commission (DVRPC) makes no warranty, representation, or guarantee as to the content, sequence, accuracy, timeliness, or completeness of any of the spatial data or database information provided herein. DVRPC and partner state, local, and other agencies shall assume no liability for errors, omissions, or inaccuracies in the information provided regardless of how caused; or any decision made or action taken or not taken by any person relying on any information or data furnished within.
               </p>
 			  	  <p style="font-size:85%">
 			  The Delaware Valley Regional Planning Commission (DVRPC) fully complies with Title VI of the Civil Rights Act of 1964, the Civil Rights Restoration Act of 1987, Executive Order 12898 on Environmental Justice, and related nondiscrimination statutes and regulations in all programs and activities. DVRPC’s website, www.dvrpc.org, may be translated into multiple languages. Publications and other public documents can be made available in alternative languages and formats, if requested. DVRPC public meetings are always held in ADA-accessible facilities and in transit-accessible locations when possible. Auxiliary services can be provided to individuals who submit a request at least seven days prior to a meeting. Requests made within seven days will be accommodated to the greatest extent possible. Any person who believes they have been aggrieved by an unlawful discriminatory practice by DVRPC under Title VI has a right to file a formal complaint. Any such complaint may be in writing and filed with DVRPC’s Title VI Compliance Manager and/or the appropriate state or federal agency within 180 days of the alleged discriminatory occurrence. For more information on DVRPC’s Title VI program, or to obtain a Title VI Complaint Form, please call (215) 238-2871 or email public_affairs@dvrpc.org.
@@ -846,9 +847,9 @@ var map,
   }, getIMDStyle = function (feature) {
     return {
       color: '#666',
-      weight: 0.75,
-      opacity: 1,
-      fillOpacity: 0.65,
+      weight: 0.65,
+      opacity: .8,
+      fillOpacity: 0.55,
       fillColor: feature.properties ? getIMDColor(feature.properties[currentLayer]) : null
     }
   }, 
@@ -876,23 +877,11 @@ var map,
     style: { color: 'black', weight: 4, fill: false, opacity: 0.75, clickable: false}
   }), 
 
-      acetate = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+  CartoDB_Positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
     subdomains: 'abcd',
     maxZoom: 19
 });
- // Acetate_roads = new L.TileLayer('http://a{s}.acetate.geoiq.com/tiles/acetate-roads/{z}/{x}/{y}.png', {
-//  attribution: '&copy;2012 Esri & Stamen, Data from OSM and Natural Earth',
-//  subdomains: '0123',
-//  minZoom: 2,
-//  maxZoom: 18
-//}),
-// Acetate_labels = new L.tileLayer('http://a{s}.acetate.geoiq.com/tiles/acetate-labels/{z}/{x}/{y}.png', {
-//  attribution: '&copy;2012 Esri & Stamen, Data from OSM and Natural Earth',
-//  subdomains: '0123',
-//  minZoom: 2,
-//  maxZoom: 18
-// }),
 
   editableLayers = new L.FeatureGroup(),
   drawControl = new L.Control.Draw({
@@ -926,7 +915,7 @@ $.getJSON('data/County_DVRPC.js', function (data) {
 map = L.map('map', {
   zoom: 9,
   center: new L.LatLng(39.97, -75.16),
-  layers: [acetate, EJDOD, DVRPC, editableLayers]
+  layers: [CartoDB_Positron, EJDOD, DVRPC, editableLayers]
 });
 
 //hack to resolve layerOrder add after layers added
@@ -1158,10 +1147,10 @@ $(function () {
 </script>
 
   <script id="EJTable-tmpl" type="text/html">
-<table id ="EJtable" class="table table-condensed table-striped table-hover" data-sort-name="name" data-sort-order="desc" >
+<table id ="EJtable" class="table table-condensed table-striped table-hover">
 <thead>
 <tr>
-<th class="hiconeven" data-sortable="true"> Tract <div>Tract</div></th>
+<th class="hiconeven"> Tract <div>Tract</div></th>
 <th class="hiconodd">Pop.<div>Pop.</div></th>
 <th class="hiconeven">Pop.5yr<div>Pop.5yr</div></th>
 <th class="hiconodd">HH<div>HH</div></th>
