@@ -804,6 +804,37 @@ var map,
         colors: ['#7A0177', '#C51B8A', '#F768A1', '#D9D9D9']
       },
       NONHISPCT: {
+<<<<<<< HEAD
+        breaks: [0.7975, 0.5357, 0.2764, 0.1343],
+        colors: ['#3E577C', '#5F608E', '#8087A3', '#D9D9D9']
+      },
+      HISLATPCT: {
+        breaks: [0.4644, 0.238, 0.0833, 0.0456],
+        colors: ['#18765D', '#52897C', '#789E95',  '#D9D9D9']
+      },
+       POVPCT: {
+        breaks: [0.434, 0.2727, 0.1231, 0.0667],
+        colors: ['#5C6453', '#78856C', '#B1BFA2',  '#D9D9D9']
+      },
+       LIMENGPCT: {
+        breaks: [0.2144,0.1074, 0.032, 0.0186],
+        colors: ['#347D85', '#71A8AF', '#B3E1E6',  '#D9D9D9']
+      },  
+      FEMHOHPCT: {
+        breaks: [0.2565, 0.1658, 0.0887, 0.0446],
+        colors: ['#C06928', '#E18D26', '#ECB576',  '#D9D9D9']
+      },
+      ELDPCT: {
+        breaks: [0.3923, 0.17, 0.065, 0.0494],
+        colors: ['#510808', '#7C3535', '#BA8C8C','#D9D9D9']
+      },
+      CARLSSPCT: {
+        breaks: [0.5164,0.338,0.1467,0.0746],
+        colors: ['#D2B729', '#DAC255', '#E2CF7F','#D9D9D9']
+      },
+	   DISPCT: {
+        breaks: [0.4793,0.1923,0.1158,0.0797],
+=======
         breaks: [0.5672, 0.4254, 0.2836, 0.1417],
         colors: ['#3E577C', '#5F608E', '#8087A3', '#D9D9D9']
       },
@@ -833,6 +864,7 @@ var map,
       },
      DISPCT: {
         breaks: [0.2430, 0.1822, 0.1214, 0.0606],
+>>>>>>> refs/remotes/origin/rbeatty
         colors: ['#476C7A', '#86B5C6', '#B4CED9','#D9D9D9']
       }
      
@@ -974,7 +1006,11 @@ function Info(layers) {
   layers.eachLayer(function (layer) {
     var props = layer.feature.properties
     //jscs:disable requireCamelCaseOrUpperCaseIdentifiers
+<<<<<<< HEAD
+    content += '<tr data-layer="' + layer.feature.id + '"><th><a href="http://factfinder2.census.gov/bkmk/table/1.0/en/ACS/12_5YR/DP05/1400000US' + (props.GEOID10) + '" target="_blank">' + (props.NAME10) + '<\/a><\/th><td>' + numeral(props.POP15).format('0,0') + '<\/td><td>' + numeral(props.PPO5YR15).format('0,0') + '<\/td><td>' + numeral(props.HH15).format('0,0') + '<\/td><td>' + (props.IPD_15)+ '<\/td><td>' + (props.NONHISIPD) + ' <\/td><td>' + numeral(props.NONHISPCT).format('0.0 %')+ '<\/td><td>' + (props.HisLatIPD) + '<\/td><td>' + numeral(props.HisLatPct).format('0.0 %')+ '<\/td><td>' + (props.PovIPD) + '<\/td><td>' + numeral(props.PovPct).format('0.0 %')+ '<\/td><td>' + (props.LimEngIPD) + '<\/td><td>' + numeral(props.LimEngPct).format('0.0 %') + '<\/td><td>' + (props.FemHoHIPD) + '<\/td><td>' + numeral(props.FemHoHPct).format('0.0 %')+ '<\/td><td>' + (props.EldIPD) + '<\/td><td>' + numeral(props.EldPct).format('0.0 %')+ '<\/td><td>' + (props.CarlssIPD) + '<\/td><td>' + numeral(props.CarlssPct).format('0.0 %')+ '<\/td>' + '<\/td><td>' + (props.DisIPD) + '<\/td><td>' + numeral(props.DisPct).format('0.0 %')+ '<\/td><td>' + (props.COUNTY_NA) + '<\/td>' + '<\/td><td>' + (props.MCD_NAME) + '<\/td><\/tr>';
+=======
     content += '<tr data-layer="' + layer.feature.id + '"><th><a href="http://factfinder2.census.gov/bkmk/table/1.0/en/ACS/15_5YR/DP05/1400000US' + (props.GEOID10) + '" target="_blank">' + (props.NAME10) + '<\/a><\/th><td>' + numeral(props.POP15).format('0,0') + '<\/td><td>' + numeral(props.POP5YR15).format('0,0') + '<\/td><td>' + numeral(props.HH15).format('0,0') + '<\/td><td>' + (props.IPD_15)+ '<\/td><td>' + (props.NONHISIPD) + ' <\/td><td>' + numeral(props.NONHISPCT).format('0.0 %')+ '<\/td><td>' + (props.HISLATIPD) + '<\/td><td>' + numeral(props.HiISLATPCT).format('0.0 %')+ '<\/td><td>' + (props.POVIPD) + '<\/td><td>' + numeral(props.POVPCT).format('0.0 %')+ '<\/td><td>' + (props.LIMENGIPD) + '<\/td><td>' + numeral(props.LIMENGPCT).format('0.0 %') + '<\/td><td>' + (props.FEMHOHIPD) + '<\/td><td>' + numeral(props.FEMHOHPCT).format('0.0 %')+ '<\/td><td>' + (props.ELDIPD) + '<\/td><td>' + numeral(props.ELDPCT).format('0.0 %')+ '<\/td><td>' + (props.CARLSSIPD) + '<\/td><td>' + numeral(props.CARLSSPCT).format('0.0 %')+ '<\/td>' + '<\/td><td>' + (props.DISIPD) + '<\/td><td>' + numeral(props.DISPCT).format('0.0 %')+ '<\/td><td>' + (props.CNTY) + '<\/td>' + '<\/td><td>' + (props.MCD_NAME) + '<\/td><\/tr>';
+>>>>>>> refs/remotes/origin/rbeatty
     //jscs:enable requireCamelCaseOrUpperCaseIdentifiers
   });
   content += '<\/tbody><\/table>';
