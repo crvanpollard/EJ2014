@@ -343,7 +343,7 @@ background-repeat: no-repeat;
             </li>
 			   <li>
               <a href="#" onclick="$('#DISModal').modal('show'); return false;" data-value="DISPCT" >
-                <img class="img-legend" src="img/5.png" > Persons with Physical Disabilities (PDIS)</a>
+                <img class="img-legend" src="img/5.png" > Persons with Disabilities (PDIS)</a>
             </li>
            
           </ul>
@@ -399,7 +399,7 @@ background-repeat: no-repeat;
                 <li>Elderly (75 years and over)</li>
                 <li>Hispanic</li>
                 <li>Limited English Proficiency</li>
-				<li>Persons with a Physical Disability</li>
+				        <li>Persons with Disabilities</li>
               </ul>
               Using U.S. Census
               <a href="http://www.census.gov/acs/www/" target="_blank">American Community Survey (ACS)</a>
@@ -467,7 +467,20 @@ background-repeat: no-repeat;
        </p>
        <p>
         <b> Abbreviation List:</b><br>
-               <img src="img/list.png" alt="** PLEASE DESCRIBE THIS IMAGE **">
+                <ul style="font-size:90%">
+                <li>IPD = Indicators of Potential Disadvantage</li>
+                <li>NHM = Non-Hispanic Minority</li>
+                <li>CH = Carless Households</li>
+                <li>POV = Households in Poverty</li>
+                <li>FHHC = Female Head of Household with Child</li>
+                <li>ELD75 = Elderly (75 years and over)</li>
+                <li>HIS = Hispanic</li>
+                <li>LEP = Limited English Proficiency</li>
+                <li>PDIS = Persons with Disabilities</li>
+                <li>Pop. = Total Population</li>
+                <li>Pop.5yr = Total Population (over 5 years)</li>
+                <li>HH = Total Households</li>
+              </ul>
        </p>
         </div>
       </div>
@@ -489,7 +502,7 @@ background-repeat: no-repeat;
             <li>Non-Hispanic Minority</li>
             <li>Carless Households</li>
             <li>Households in Poverty</li>
-            <li>Persons with a Physical Disability</li>
+            <li>Persons with Disabilities</li>
             <li>Female Head of Household with Child</li>
             <li>Elderly (75 years and over)</li>
             <li>Hispanic</li>
@@ -638,14 +651,14 @@ background-repeat: no-repeat;
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title"><img class="img-legend" src="img/5.png"> Persons with Physical Disabilities (PDIS)</h4>
+          <h4 class="modal-title"><img class="img-legend" src="img/5.png"> Persons with Disabilities (PDIS)</h4>
         </div>
         <div class="modal-body">
           <B> Regional Threshold: 12.14 percent <br>
-        County Thresholds: 8.16 percent to 15.92 percent </B>
-              <p>The analysis of the distribution of persons with physical disabilities relies on data from the U.S. Census, which defines a physical disability as "a condition that substantially limits one or more basic physical activities, such as walking, climbing stairs, reaching, lifting, or carrying."
-      </p>
-          <img src="img/legend/Disability.png">
+              County Thresholds: 8.16 percent to 15.92 percent </B>
+              <p>ACS uses several questions and data sources to try to capture six aspects of disability - hearing, vision, cognition, ambulation, difficulty bathing and dressing, and difficulty performing errands such as shopping - which can be used together to create an overall disability measure. Individuals with different ability levels have different travel patterns and needs. 
+              </p>
+          <img src="img/legend/disability.png">
           <img src="img/legend/disability_bar.png"></div>
       </div>
     </div>
@@ -783,8 +796,8 @@ function loadImageCH(){
   $('#legendMap').css('height', '175');
 }
 function loadImagePDIS(){
-  $('#legendMap').css('backgroundImage', 'url(img/legend/Disability.png)');
-  $('#legendMap').css('width', '327');
+  $('#legendMap').css('backgroundImage', 'url(img/legend/disability.png)');
+  $('#legendMap').css('width', '278');
   $('#legendMap').css('height', '175');
 }
 
